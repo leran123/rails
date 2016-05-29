@@ -29,7 +29,7 @@ class EventsController < ApplicationController
   	#@event = Event.find(params[:id])
     @page_title = @event.name
 
-    respond_to do |format|
+      respond_to do |format|
       format.html { @page_title = @event.name } # show.html.erb
       format.xml # show.xml.builder
       format.json { render :json => { id: @event.id, name: @event.name }.to_json }
