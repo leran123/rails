@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  resources :events  # 越上优先级越高
+  
   resources :persions
 
   get "welcome/say_hello" => "welcome#say"
   get "welcome" => "welcome#index"
 
   root :to => "welcome#index"  #set the root page to index
-  match ':controller(/:action(/:id(.:format)))', :via => :all
+  # match ':controller(/:action(/:id(.:format)))', :via => :all
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
